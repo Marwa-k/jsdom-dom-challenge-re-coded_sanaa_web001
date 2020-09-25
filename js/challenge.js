@@ -10,28 +10,28 @@ document.addEventListener("DOMContentLoaded", function() {
   const comments = document.getElementById('list')
   let speedCounter = setInterval(plusCounter, 1000)
   let gameRunning = true
- 
+
     function plusCounter() {
       if (gameRunning === true){
        counter.innerHTML++
      }
     };
- 
+
     plus.addEventListener("click", function() {
       counter.innerHTML++
     });
- 
+
     minus.addEventListener("click", function() {
       counter.innerHTML--
     });
- 
+
     like.addEventListener("click", function() {
       const likesList = document.createElement("LI");
       let likeTracker = document.createTextNode(`${counter.innerHTML} has been liked 1 times.`)
       likesList.appendChild(likeTracker);
       likes.appendChild(likesList);
     });
- 
+
     submit.addEventListener("click", function() {
       event.preventDefault();
       const newComment = document.createElement("p");
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
       comments.appendChild(newComment);
       commentForm.value ='';
     });
- 
- 
+
+
   pause.addEventListener("click", function() {
    if (gameRunning === true){
      gameRunning = false
@@ -61,4 +61,4 @@ document.addEventListener("DOMContentLoaded", function() {
      submit.disabled = false;
      commentForm.disabled = false;
    };
-  });  
+  });
